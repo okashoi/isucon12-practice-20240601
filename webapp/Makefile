@@ -16,7 +16,7 @@ truncate-logs:
 	sudo truncate --size 0 /var/log/nginx/access.log
 	sudo truncate --size 0 /var/log/nginx/error.log
 	ssh isucon-s3 "sudo truncate --size 0 /var/log/mysql/mysql-slow.log && sudo chmod 666 /var/log/mysql/mysql-slow.log"
-	sudo truncate --size 0 /var/log/mysql/error.log
+	 ssh isucon-s3 "sudo truncate --size 0 /var/log/mysql/error.log"
 
 start-services:
 	ssh isucon-s3 "sudo systemctl start mysql"
