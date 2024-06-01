@@ -88,24 +88,24 @@ duration_index = 10
 # For overview of regexp syntax: https://golang.org/pkg/regexp/syntax/
 #
 [[bundle]]
-regexp = 'GET /api/player/competition/[\w]+/ranking'
-name = 'GET /api/player/competition/[\w]+/ranking'
+regexp = 'GET /api/player/competition/[\w-]+/ranking'
+name = 'GET /api/player/competition/[\w-]+/ranking'
 
 [[bundle]]
-regexp = 'GET /api/player/player/[\w]+'
-name = 'GET /api/player/player/[\w]+'
+regexp = 'GET /api/player/player/[\w-]+'
+name = 'GET /api/player/player/[\w-]+'
 
 [[bundle]]
-regexp = 'POST /api/organizer/competition/[\w]+/score'
-name = 'POST /api/organizer/competition/[\w]+/score'
+regexp = 'POST /api/organizer/competition/[\w-]+/score'
+name = 'POST /api/organizer/competition/[\w-]+/score'
 
 [[bundle]]
-regexp = 'POST /api/organizer/player/[\w]+/disqualified'
-name = 'POST /api/organizer/player/[\w]+/disqualified'
+regexp = 'POST /api/organizer/player/[\w-]+/disqualified'
+name = 'POST /api/organizer/player/[\w-]+/disqualified'
 
 [[bundle]]
-regexp = 'POST /api/organizer/competition/[\w]+/finish'
-name = 'POST /api/organizer/competition/[\w]+/finish'
+regexp = 'POST /api/organizer/competition/[\w-]+/finish'
+name = 'POST /api/organizer/competition/[\w-]+/finish'
 #
 #[[bundle]]
 #regexp = '^(GET|HEAD) /images/'
