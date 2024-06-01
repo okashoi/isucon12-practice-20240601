@@ -1387,7 +1387,7 @@ func competitionRankingHandler(c echo.Context) error {
 		scoredPlayerSet[ps.PlayerID] = struct{}{}
 		ranks = append(ranks, CompetitionRank{
 			Score:             ps.Score,
-			PlayerID:          ps.ID,
+			PlayerID:          ps.PlayerID,
 			PlayerDisplayName: ps.DisplayName,
 			RowNum:            ps.RowNum,
 		})
