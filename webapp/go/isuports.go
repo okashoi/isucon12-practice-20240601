@@ -1351,7 +1351,7 @@ func competitionRankingHandler(c echo.Context) error {
 		}
 	}
 
-	time.Sleep(1 * time.Minute)
+	time.Sleep(25 * time.Second)
 
 	// player_scoreを読んでいるときに更新が走ると不整合が起こるのでロックを取得する
 	fl, err := flockByTenantID(v.tenantID)
