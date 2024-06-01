@@ -8,7 +8,8 @@ stop-services:
 	sudo systemctl stop mysql
 
 build:
-	cd go && make && cd ..
+	echo "do nothing"
+#	cd go && make && cd ..
 
 truncate-logs:
 	sudo journalctl --vacuum-size=1K
