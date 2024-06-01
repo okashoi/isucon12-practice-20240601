@@ -16,7 +16,7 @@ truncate-logs:
 	sudo truncate --size 0 /var/log/nginx/access.log
 	sudo truncate --size 0 /var/log/nginx/error.log
 	ssh isucon-s3 "sudo truncate --size 0 /var/log/mysql/mysql-slow.log && sudo chmod 666 /var/log/mysql/mysql-slow.log"
-	sudo truncate --size 0 /var/log/mysql/error.log
+	ssh isucon-s3 "sudo truncate --size 0 /var/log/mysql/error.log"
 
 start-services:
 	ssh isucon-s3 "sudo systemctl start mysql"
@@ -27,7 +27,7 @@ kataribe: timestamp=$(shell TZ=Asia/Tokyo date "+%Y%m%d-%H%M%S")
 kataribe:
 	mkdir -p ~/kataribe-logs
 	sudo cp /var/log/nginx/access.log /tmp/last-access.log && sudo chmod 666 /tmp/last-access.log
-	cat /tmp/last-access.log | ./kataribe -conf kataribe.toml > ~/kataribe-logs/$timestamp.log
+	cat /tmp/last-access.log | ~/kataribe -conf ~/kataribe.toml > ~/kataribe-logs/$timestamp.log
 	cat ~/kataribe-logs/$timestamp.log | grep --after-context 20 "Top 20 Sort By Total"
 
 pprof: TIME=60
